@@ -56,3 +56,31 @@ This thesis investigates how companies can leverage sentiment analysis to interp
   - `scikit-learn`
   - `numpy`
   - `vaderSentiment`
+ 
+## How to Run
+
+Below are the steps for running each script.
+
+### 1. Lexicon-Based Analysis
+
+```bash
+python lexicon_analysis.py
+```
+
+- Loads the last 10,000 Amazon reviews from `amazon_dataframe.csv`.
+- Removes the entries with a star rating of 3 (ambiguous) and define the rest as positive (star rating > 3) or negative (< 3).
+- Applies the VADER sentiment analyzer to each review, then prints a confusion matrix and classification report.
+
+### 2. Category-Level Analysis
+
+
+```bash
+python analysis_across_category.py
+```
+
+- Loads the dataset.
+- Splits it into training and testing subsets.
+- Removes reviews with star_rating == 3.
+- Trains a Logistic Regression model on the vectorized text data.
+- Evaluates the model using a confusion matrix and classification report.
+- Demonstrates how classification accuracy can vary across product categories.
